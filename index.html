@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação Educativa: Fluxo de Hemácias no Vaso Sanguíneo</title>
+    <!-- Importa o componente model-viewer da Google -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(8px);
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: #ff6b6b;
+        }
+        p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+        model-viewer {
+            width: 100%;
+            height: 350px;
+            background-color: #0f172a;
+            border-radius: 12px;
+        }
+        .ar-button {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        .ar-button:hover {
+            background-color: #d90429;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Simulação Educativa</h1>
+        <p>Fluxo de Hemácias no Vaso Sanguíneo</p>
+
+        <!-- Visualizador 3D com suporte a AR (Realidade Aumentada) -->
+        <!-- Substitua 'hemacia.glb' pelo nome exato do seu ficheiro 3D -->
+        <model-viewer 
+            src="hemacia.glb" 
+            ios-src="hemacia.usdz"
+            alt="Modelo 3D de Hemácia" 
+            ar 
+            ar-modes="webxr scene-viewer quick-look" 
+            camera-controls 
+            auto-rotate>
+            
+            <button slot="ar-button" class="ar-button">
+                Ver em Realidade Aumentada (AR) no Telemóvel
+            </button>
+        </model-viewer>
+    </div>
+
+</body>
+</html>
